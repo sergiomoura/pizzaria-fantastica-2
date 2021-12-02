@@ -1,0 +1,10 @@
+Passo 1 - Exibindo o formulário:
+    ☐ Criar um novo roteador num arquivo chamado AdmRouter.js
+    ☐ Criar uma rota get para '/adm/pizzas/create'.
+    Esta rota, por enquanto, deve somente retornar para o cliente uma
+    mensagem qualquer.
+    ☐ Importe esse novo roteador no index.js e use-o com o app.use
+    ☐ Teste a rota acessando http://localhost:3000/adm/pizzas/create
+    ☐ Importe o PizzasController no AdmRouter.js
+    ☐ Faça a rota get para '/adm/pizzas/create' direcionar a requisição para PizzasController.create
+    ☐ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs
