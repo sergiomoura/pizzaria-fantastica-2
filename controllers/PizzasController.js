@@ -1,5 +1,7 @@
 const pizzas = require('../database/Pizzas.json');
 const fs = require('fs');
+const { validationResult } = require('express-validator');
+
 
 const controller = {
     
@@ -12,12 +14,19 @@ const controller = {
 
         // Capturar o id requisitado (req.params)
         const idPizza = req.params.id;
+        let idPrev = null;
+        let idNext = null;
 
         // Capturar do array a pizza com o id requisitado (pizzas.find)
-        const pizza = pizzas.find( (p,i) => p.id == idPizza );
+        const pizza = pizzas.find(
+            (p, i) => {
+                idPrev = pizzas[i-1]==undefined?undefined:pizzas[i-1].id;
+                idNext = pizzas[i+1]==undefined?undefined:pizzas[i+1].id;
+                return p.id == idPizza
+            });
 
         // Retornar a pizza encontrada para o cliente (res.send())
-        res.render('pizza',{pizza});
+        res.render('pizza',{pizza, idNext, idPrev});
 
     },
 
@@ -42,6 +51,13 @@ const controller = {
     },
 
     store: (req,res) => {
+
+        const erros = validationResult(req);
+        
+        if(!erros.isEmpty()){
+            // return res.send(erros.mapped());
+            res.render('crud-pizzas/create', {erros: erros.mapped()})
+        }
 
         const nome = req.body.nome;
         const ingredientes = req.body.ingredientes.split(',').map(a => a.trim());

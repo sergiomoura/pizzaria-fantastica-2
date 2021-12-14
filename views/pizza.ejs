@@ -16,8 +16,14 @@
 		<img src="<%= pizza.img %>" alt="Quatro Queijos">
 		<div>Ingredientes: <%= pizza.ingredientes %></div>
 		<button>+ Add</button>
-		<a href="pizza.html" class="prev">&lt;</a>
-		<a href="/pizzas/<%= pizza.id + 1 %>" class="next">&gt;</a>
+		<% if(idPrev != undefined) { %>
+			<a href="/pizzas/<%= idPrev %>" class="prev">&lt;</a>
+			<% } %>
+
+		<% if(idNext != undefined) { %>
+		<a href="/pizzas/<%= idNext %>" class="next">&gt;</a>
+		<% } %>
+
 	</main>
 </body>
 </html>
