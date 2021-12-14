@@ -1,6 +1,7 @@
 // Importar o express
 const express = require('express');
 const ValidadorDeFormPizza = require('../middlewares/ValidadorDeFormPizza');
+const AdmController = require("../controllers/AdmController");
 
 const multer = require('multer');
 const storage = multer.diskStorage(
@@ -24,6 +25,8 @@ const router = express.Router();
 // Definir rotas às quais ele responde
 router.get('/pizzas/create', PizzasController.create);
 router.post('/pizzas/create', upload.single('img'), ValidadorDeFormPizza, PizzasController.store);
+router.get('/login', AdmController.showLogin);
+router.post('/login', AdmController.login);
 
 // Exportar o roteador
 module.exports = router;

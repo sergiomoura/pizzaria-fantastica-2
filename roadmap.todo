@@ -10,6 +10,9 @@ Passo 1 - Exibindo o formulário:
     ✔ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs @done(21-12-14 09:14)
 
 Passo 2: Exibindo o formulário de login:
-    ☐ Criar uma rota get no AdmRouter para /login direcionando a requisição para AdmController.showLogin
-    ☐ Criar o AdmController.showLogin fazendo com que ele exiba a view login.ejs
-    ☐ A view login.ejs tem campo email, senha e botão de logar.
+    ✔ Criar uma rota get no AdmRouter para /login direcionando a requisição para AdmController.showLogin @done(21-12-14 09:31)
+    ✔ Criar o AdmController.showLogin fazendo com que ele exiba a view login.ejs @done(21-12-14 09:33)
+    ✔ A view login.ejs tem campo email, senha e botão de logar. @done(21-12-14 09:37)
+    ✔ Direcionar o form de login para a rota post /adm/login @done(21-12-14 09:44)
+    ☐ Criar uma rota POST para /adm/login no AdmRouter deve direcionar para o controller AdmController.login
+    ☐ Criar o controller AdmController.login que exibe msg ok
