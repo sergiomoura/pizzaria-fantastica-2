@@ -1,10 +1,15 @@
 Passo 1 - Exibindo o formulário:
-    ☐ Criar um novo roteador num arquivo chamado AdmRouter.js
-    ☐ Criar uma rota get para '/adm/pizzas/create'.
+    ✔ Criar um novo roteador num arquivo chamado AdmRouter.js @done(21-12-14 09:14)
+    ✔ Criar uma rota get para '/adm/pizzas/create'. @done(21-12-14 09:14)
     Esta rota, por enquanto, deve somente retornar para o cliente uma
     mensagem qualquer.
-    ☐ Importe esse novo roteador no index.js e use-o com o app.use
-    ☐ Teste a rota acessando http://localhost:3000/adm/pizzas/create
-    ☐ Importe o PizzasController no AdmRouter.js
-    ☐ Faça a rota get para '/adm/pizzas/create' direcionar a requisição para PizzasController.create
-    ☐ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs
+    ✔ Importe esse novo roteador no index.js e use-o com o app.use @done(21-12-14 09:14)
+    ✔ Teste a rota acessando http://localhost:3000/adm/pizzas/create @done(21-12-14 09:14)
+    ✔ Importe o PizzasController no AdmRouter.js @done(21-12-14 09:14)
+    ✔ Faça a rota get para '/adm/pizzas/create' direcionar a requisição para PizzasController.create @done(21-12-14 09:14)
+    ✔ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs @done(21-12-14 09:14)
+
+Passo 2: Exibindo o formulário de login:
+    ☐ Criar uma rota get no AdmRouter para /login direcionando a requisição para AdmController.showLogin
+    ☐ Criar o AdmController.showLogin fazendo com que ele exiba a view login.ejs
+    ☐ A view login.ejs tem campo email, senha e botão de logar.
