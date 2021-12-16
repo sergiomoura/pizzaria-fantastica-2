@@ -16,3 +16,8 @@ Passo 2: Exibindo o formulário de login:
     ✔ Direcionar o form de login para a rota post /adm/login @done(21-12-14 09:44)
     ☐ Criar uma rota POST para /adm/login no AdmRouter deve direcionar para o controller AdmController.login
     ☐ Criar o controller AdmController.login que exibe msg ok
+
+Passo 3: Faze3r o Logout:
+    ✔ Criar uma rota GET /adm/logout que direcione o req para um controller AdmController.logout @done(21-12-16 11:29)
+    ✔ Criar o controller AdmController.logout @done(21-12-16 11:29)
+    ✔ Fazer com que o AdmController.logout set a session.usuario como undefined e direcione o usuário para tela de login @done(21-12-16 11:29)

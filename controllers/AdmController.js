@@ -1,3 +1,5 @@
+const req = require('express/lib/request');
+
 module.exports = {
     showLogin: (req,res) => {
         return res.render("login");
@@ -25,5 +27,10 @@ module.exports = {
         // Redirecionar o usuário para uma página interna
         return res.redirect("/adm/pizzas/create");
 
+    },
+    logout: (req,res) => {
+        req.session.usuario = undefined;
+        res.redirect('/adm/login');
     }
+
 }
