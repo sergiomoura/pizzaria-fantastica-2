@@ -1,5 +1,6 @@
 // importar o express
 const express = require('express');
+const session = require("express-session");
 
 // Importando o roteador
 const PizzasRouter = require('./routers/PizzasRouter');
@@ -19,6 +20,7 @@ app.set("views", "./views");
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+app.use(session({secret:"SEGREDO"}));
 
 // Configurar a pasta public
 app.use(express.static(__dirname + '/public'));

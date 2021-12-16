@@ -17,16 +17,17 @@ const upload = multer({storage})
 
 
 // Importar o PizzasController
-const PizzasController = require('../controllers/PizzasController')
+const PizzasController = require('../controllers/PizzasController');
+const UsuarioLogado = require('../middlewares/UsuarioLogado');
 
 // Criar roteador
 const router = express.Router();
 
 // Definir rotas às quais ele responde
-router.get('/pizzas/create', PizzasController.create);
-router.post('/pizzas/create', upload.single('img'), ValidadorDeFormPizza, PizzasController.store);
+router.get('/pizzas/create', UsuarioLogado, PizzasController.create);
+router.post('/pizzas/create', UsuarioLogado, upload.single('img'), ValidadorDeFormPizza, PizzasController.store);
 router.get('/login', AdmController.showLogin);
 router.post('/login', AdmController.login);
 
-// Exportar o roteador
+// Exportar o roteador 
 module.exports = router;
